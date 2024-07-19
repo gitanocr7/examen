@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgregarSocio</title>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h2>Formulario Crud para Agregar socio</h2><br>
+        <form action="agregarSocio.html" method="post">
+            {% csrf_token %}
+            <pre>Rut:                    <input type="text" name="rut" ></pre>
+            <pre>Nickname:                    <input type="text" name="Nickname" ></pre>
+            <pre>Nombre:                    <input type="text" name="nombre" ></pre>
+            <pre>Apellido:                    <input type="text" name="apellido" ></pre>
+            <pre>Correo:                    <input type="text" name="correo" ></pre>
+            <input type="submit" name="opcion" value="Agregar">
+
+        </form>
+        <a href="{% url'crud' %}">Volver</a>
+        <br>
+        <div id="idMensajes">
+            {% if mensaje %}
+            {{mensaje}}
+            {% endif %}
+
+        </div>
+
+
+    </div>
+</body>
+</html>
